@@ -25,14 +25,13 @@
       display: flex;
       justify-content: center;
     }
-
     .hero-button {
       background-color: #FF00FF;
       color: white;
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 25px;
-      margin: 5px; /* Adjust as needed */
+      margin: 5px;
     }
     .slideshow-container {
       max-width: 1000px;
@@ -43,50 +42,58 @@
       display: none;
     }
     .projects-section {
-    text-align: center;
-    padding: 50px; /* Adjust padding as needed */
+      text-align: center;
+      padding: 50px;
     }
-
     .projects-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 20px; /* Space between projects */
+      gap: 20px;
     }
-    
     .project-item {
-      width: calc(50% - 10px); /* Adjust width for responsiveness */
-      margin-bottom: 20px; /* Space below each project */
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
     }
-    
     .project-image {
-      width: 100%; /* Make image responsive */
-      height: auto; /* Maintain aspect ratio */
-      border: 1px solid #ccc; /* Optional border */
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
     }
-    
     .project-button {
       display: inline-block;
       margin: 10px;
       padding: 10px 20px;
-      background-color: #333; /* Dark background for the button */
-      color: white; /* Text color */
+      background-color: #333;
+      color: white;
       text-decoration: none;
-      border-radius: 5px; /* Rounded corners */
+      border-radius: 5px;
     }
-    
     @media screen and (max-width: 600px) {
       .project-item {
-          width: 100%; /* Full width on smaller screens */
+          width: 100%;
       }
     }
     .project-thumbnail {
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
     .project-thumbnail:hover {
       transform: scale(1.05);
+    }
+    .project-thumbnail-container img {
+      max-width: 100%; /* Limit image width to 100% of its parent container */
+      height: auto; /* Keep the aspect ratio of the image */
+      display: block; /* Display block to remove any unwanted space below the image */
+      margin: 0 auto; /* Center the image horizontally */
+    }
+    .lb-image {
+      max-width: 95%; /* Adjust the percentage to give some room on the sides */
+      max-height: 95vh; /* Adjust the height to be less than the viewport height to avoid scrolling */
+      width: auto; /* Maintain the original aspect ratio */
+      height: auto; /* Maintain the original aspect ratio */
+      display: block; /* Ensures the image is a block-level element */
+      margin: auto; /* Centers the image horizontally and vertically in the container */
     }
   </style>
 </head>
@@ -94,7 +101,7 @@
   <div class="hero">
     <h1>Hi, my name is Malek!</h1>
     <h2>Football Data Recruitment</h2>
-    <h3>Having worked in journalism, video analysis, and scouting, I bring various perspectives and provide insights beyond what the data is saying.</h3>
+    <h3>Having worked in journalism, video and data scouting, I can bring various perspectives and insights to your scouting department.</h3>
     <div class="button-container">
         <a href="#about" class="hero-button">About Me</a>
         <a href="#contact" class="hero-button">Contact Me</a>
@@ -118,10 +125,6 @@
     <div class="mySlides">
       <img src="images/Mitoma.png" style="width:100%">
     </div>
-
-    <!-- You can add more slides here -->
-
-    <!-- Add arrows for navigation if desired -->
   </div>
 
   <script>
@@ -137,33 +140,59 @@
       slideIndex++;
       if (slideIndex > slides.length) {slideIndex = 1}    
       slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3100); // Change image every 2 seconds
+      setTimeout(showSlides, 3100); // Change image every 3.1 seconds
     }
   </script>
+
   <div class="projects-section">
-    <!-- Project Title and Description here -->
     <div class="project-item">
       <h3>Project Euro 2020 Analysis</h3>
       <p>This project involved analyzing data from the Euro 2020 football championship to derive insightful analytics and visualizations.</p>
       
-      <!-- Visible thumbnail or button to start the slideshow -->
-      <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
-          <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
-      </a>
+      <div class="project-thumbnail-container">
+        <!-- Thumbnail image -->
+        <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
+            <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
+        </a>
+        <!-- 'View More' button -->
+        <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" class="project-button">View More</a>
+      </div>
       
       <!-- Hidden links for the rest of the slideshow -->
-      <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 2"></a>
       <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
       <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
       <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
-</div>
-  <script src="lightside/js/lightbox.js"></script>
+    </div>
+  
+    <div class="project-item">
+      <h3>Player Presentations</h3>
+      <p>Analysis of potential targets. Assessing their strengths, weaknesses, how well they fit to the profile, and comparison to other players. </p>
+      
+      <div class="project-thumbnail-container">
+        <!-- Thumbnail image -->
+        <a href="images/CMDataTemplate/CMTemp1.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 1">
+            <img src="images/CMDataTemplate/CMTemp1.png" alt="Central Midfielder Data Presentation" class="project-thumbnail">
+        </a>
+        <!-- 'View More' button -->
+        <a href="images/CMDataTemplate/CMTemp1.png" data-lightbox="cm-data-presentation" class="project-button">View More</a>
+      </div>
+      
+      <!-- Hidden links for the rest of the slideshow -->
+      <a href="images/CMDataTemplate/CMTemp2.jpg" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 2"></a>
+      <a href="images/CMDataTemplate/CMTemp3.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 3"></a>
+      <a href="images/CMDataTemplate/CMTemp4.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 4"></a>
+    </div>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="lightbox/js/lightbox.js"></script>
   <script>
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    // ...additional options as needed
-  })
-</script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'albumLabel': "Image %1 of %2"
+    })
+  </script>
 </body>
 </html>
