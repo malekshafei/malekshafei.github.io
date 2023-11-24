@@ -80,6 +80,14 @@
           width: 100%; /* Full width on smaller screens */
       }
     }
+    .project-thumbnail {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-thumbnail:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -135,16 +143,19 @@
   <div class="projects-section">
     <!-- Project Title and Description here -->
     <div class="project-item">
-        <!-- The thumbnail image that users will click to start the slideshow -->
-        <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
-            <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1">
-        </a>
-        <!-- Hidden links for the rest of the images in the slideshow. They won't be visible, but Lightbox will use them for the slideshow -->
-        <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 2"></a>
-        <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
-        <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
-        <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
-    </div>
+      <h3>Project Euro 2020 Analysis</h3>
+      <p>This project involved analyzing data from the Euro 2020 football championship to derive insightful analytics and visualizations.</p>
+      
+      <!-- Visible thumbnail or button to start the slideshow -->
+      <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
+          <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
+      </a>
+      
+      <!-- Hidden links for the rest of the slideshow -->
+      <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 2"></a>
+      <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
+      <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
+      <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
 </div>
   <script src="lightside/js/lightbox.js"></script>
   <script>
