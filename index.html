@@ -37,6 +37,9 @@
       max-width: 1000px;
       position: relative;
       margin: auto;
+      <div class="button-container">
+        <button id="pauseButton" class="hero-button">Pause</button>
+      </div>
     }
     .mySlides {
       display: none;
@@ -139,18 +142,31 @@
   <script>
     var slideIndex = 0;
     showSlides();
+    var slides = document.getElementsByClassName("mySlides");
+    var slideInterval = setInterval(showSlides, 3100); // Change image every 3.1 seconds
+    var paused = false;
 
     function showSlides() {
       var i;
-      var slides = document.getElementsByClassName("mySlides");
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
       }
       slideIndex++;
       if (slideIndex > slides.length) {slideIndex = 1}    
       slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3100); // Change image every 3.1 seconds
+      //setTimeout(showSlides, 3100); // Change image every 3.1 seconds
     }
+
+    document.getElementById('pauseButton').addEventListener('click', function() {
+    if (!paused) {
+        clearInterval(slideInterval);
+        this.textContent = "Resume";
+    } else {
+        slideInterval = setInterval(showSlides, 3100);
+        this.textContent = "Pause";
+    }
+    paused = !paused;
+    });
   </script>
 
   <div class="projects-section">
