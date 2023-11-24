@@ -6,192 +6,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malek Shafei - Football Data Scouting</title>
   <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .hero {
-      background-color: #000;
-      color: white;
-      height: 50vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .button-container {
-      display: flex;
-      justify-content: center;
-    }
-    .hero-button {
-      background-color: #FF00FF;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 25px;
-      margin: 5px;
-    }
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-    .mySlides {
-      display: none;
-    }
-    .projects-section {
-      text-align: center;
-      padding: 50px;
-    }
-    .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-    .project-item {
-      width: calc(50% - 10px);
-      margin-bottom: 20px;
-    }
-    .project-image {
-      width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-    }
-    .project-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    @media screen and (max-width: 600px) {
-      .project-item {
-          width: 100%;
-      }
-    }
-    .project-thumbnail {
+    /* Existing styles... */
+
+    /* Add styles for slideshow buttons */
+    .prev, .next, .pause {
       cursor: pointer;
-      transition: transform 0.3s ease;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
     }
-    .project-thumbnail:hover {
-      transform: scale(1.05);
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
-    .project-thumbnail-container img {
-      max-width: 100%; /* Limit image width to 100% of its parent container */
-      height: auto; /* Keep the aspect ratio of the image */
-      display: block; /* Display block to remove any unwanted space below the image */
-      margin: 0 auto; /* Center the image horizontally */
+
+    .prev {
+      left: 0;
+      border-radius: 3px 0 0 3px;
     }
-    .lb-image {
-      max-width: 95%; /* Adjust the percentage to give some room on the sides */
-      max-height: 95vh; /* Adjust the height to be less than the viewport height to avoid scrolling */
-      width: auto; /* Maintain the original aspect ratio */
-      height: auto; /* Maintain the original aspect ratio */
-      display: block; /* Ensures the image is a block-level element */
-      margin: auto; /* Centers the image horizontally and vertically in the container */
+
+    .pause {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 3px;
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Hi, my name is Malek!</h1>
-    <h2>Football Data Recruitment</h2>
-    <h3>Having worked in journalism, video and data scouting, I can bring various perspectives and insights to your scouting department.</h3>
-    <div class="button-container">
-        <a href="about.html" class="hero-button">About Me</a>
-        <a href="contact.html" class="hero-button">Contact Me</a>
-    </div>
-  </div>
+  <!-- Existing content... -->
 
   <div class="slideshow-container" id="slideshow">
     <!-- Full-width images with number and caption text -->
-    <div class="mySlides">
-      <img src="images/Euro2020Project/12.png" style="width:100%">
-    </div>
+    <!-- Existing slides... -->
 
-    <div class="mySlides">
-      <img src="images/OnePagerTemplate2.png" style="width:100%">
-    </div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+    <a class="next" onclick="moveSlides(1)">&#10095;</a>
     
-    <div class="mySlides">
-      <img src="images/Memphis 901 Pre Match.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="images/Mitoma.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="images/ShootingLocation.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="images/CBTextAnalysis.png" style="width:100%">
-    </div>
-
+    <!-- Pause button -->
+    <a class="pause" onclick="togglePause()">&#10074;&#10074;</a> <!-- Unicode character for pause -->
   </div>
 
   <script>
-    var slideIndex = 0;
-    showSlides();
+    var slideIndex = 1;
+    var slides = document.getElementsByClassName("mySlides");
+    var paused = false;
+    var myTimer = setInterval(function(){ moveSlides(1) }, 3100);
 
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+    function moveSlides(n) {
+      clearInterval(myTimer);
+      if (n < 0){
+        showSlides(slideIndex -= 1);
+      } else {
+       showSlides(slideIndex += 1); 
       }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3100); // Change image every 3.1 seconds
+      if (n === -1){
+        myTimer = setInterval(function(){ moveSlides(n + 2) }, 3100);
+      } else {
+        myTimer = setInterval(function(){ moveSlides(n + 1) }, 3100);
+      }
+    }
+
+    function showSlides(n) {
+      var i;
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
+    function togglePause() {
+      if (!paused) {
+        clearInterval(myTimer);
+        paused = true;
+      } else {
+        myTimer = setInterval(function(){ moveSlides(slideIndex) }, 3100);
+        paused = false;
+      }
     }
   </script>
 
-  <div class="projects-section">
-    <div class="project-item">
-      <h3>Project Euro 2020 Analysis</h3>
-      <p>This project involved analyzing data from the Euro 2020 football championship to derive insightful analytics and visualizations.</p>
-      
-      <div class="project-thumbnail-container">
-        <!-- Thumbnail image -->
-        <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
-            <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
-        </a>
-        <!-- 'View More' button -->
-        <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" class="project-button">View More</a>
-      </div>
-      
-      <!-- Hidden links for the rest of the slideshow -->
-      <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
-      <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
-      <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
-    </div>
-  
-    <div class="project-item">
-      <h3>Player Presentations</h3>
-      <p>Analysis of potential targets. Assessing their strengths, weaknesses, how well they fit to the profile, and comparison to other players. </p>
-      
-      <div class="project-thumbnail-container">
-        <!-- Thumbnail image -->
-        <a href="images/CMDataTemplate/CMTemp1.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 1">
-            <img src="images/CMDataTemplate/CMTemp1.png" alt="Central Midfielder Data Presentation" class="project-thumbnail">
-        </a>
-        <!-- 'View More' button -->
-        <a href="images/CMDataTemplate/CMTemp22.png" data-lightbox="cm-data-presentation" class="project-button">View More</a>
-      </div>
-      
-      <!-- Hidden links for the rest of the slideshow -->
-      <a href="images/CMDataTemplate/CMTemp3.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 3"></a>
-      <a href="images/CMDataTemplate/CMTemp4.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 4"></a>
-    </div>
-  </div>
-
+  <!-- Rest of the existing content... -->
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="lightbox/js/lightbox.js"></script>
