@@ -81,8 +81,11 @@
     .project-thumbnail:hover {
       transform: scale(1.05);
     }
-    .project-thumbnail-container {
-      text-align: center;
+    .project-thumbnail-container img {
+      max-width: 100%; /* Limit image width to 100% of its parent container */
+      height: auto; /* Keep the aspect ratio of the image */
+      display: block; /* Display block to remove any unwanted space below the image */
+      margin: 0 auto; /* Center the image horizontally */
     }
     .lightbox .lb-image {
       max-width: 80%;
