@@ -87,10 +87,11 @@
       display: block; /* Display block to remove any unwanted space below the image */
       margin: 0 auto; /* Center the image horizontally */
     }
-    .lightbox .lb-image {
-      max-width: 80%;
-      max-height: 80vh;
-      margin: auto;
+    .lb-image {
+      max-width: 100%; /* Limits the image width to 100% of the container width */
+      max-height: 80vh; /* Limits the image height to 80% of the viewport height */
+      display: block; /* Ensures the image is a block-level element */
+      margin: auto; /* Centers the image horizontally in the container */
     }
   </style>
 </head>
@@ -98,7 +99,7 @@
   <div class="hero">
     <h1>Hi, my name is Malek!</h1>
     <h2>Football Data Recruitment</h2>
-    <h3>Having worked in journalism, video analysis, and scouting, I bring various perspectives and provide insights beyond what the data is saying.</h3>
+    <h3>Having worked in journalism, video and data scouting, I can bring various perspectives and insights to your scouting department.</h3>
     <div class="button-container">
         <a href="#about" class="hero-button">About Me</a>
         <a href="#contact" class="hero-button">Contact Me</a>
