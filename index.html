@@ -41,21 +41,18 @@
         .mySlides {
             display: none;
         }
-        .projects-section {
-            text-align: center;
-            padding: 50px;
-        }
         /* ... rest of your CSS ... */
     </style>
 </head>
 <body>
     <div class="hero">
-        <!-- ... hero content ... -->
-    </div>
-
-    <!-- Pause/Resume button above the slideshow -->
-    <div class="button-container">
-        <button id="pauseButton" class="hero-button">Pause</button>
+        <h1>Hi, my name is Malek!</h1>
+        <h2>Football Data Recruitment</h2>
+        <h3>Having worked in journalism, video and data scouting, I can bring various perspectives and insights to your scouting department.</h3>
+        <div class="button-container">
+            <a href="about.html" class="hero-button">About Me</a>
+            <a href="contact.html" class="hero-button">Contact Me</a>
+        </div>
     </div>
 
     <div class="slideshow-container" id="slideshow">
@@ -63,11 +60,54 @@
         <div class="mySlides">
             <img src="images/Euro2020Project/12.png" style="width:100%">
         </div>
-        <!-- ... more slides ... -->
+        <div class="mySlides">
+            <img src="images/OnePagerTemplate2.png" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="images/Memphis 901 Pre Match.png" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="images/Mitoma.png" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="images/ShootingLocation.png" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="images/CBTextAnalysis.png" style="width:100%">
+        </div>
+    </div>
+
+    <!-- Pause/Resume button -->
+    <div class="button-container">
+        <button id="pauseButton" class="hero-button">Pause</button>
     </div>
 
     <div class="projects-section">
-        <!-- ... project section content ... -->
+        <div class="project-item">
+            <h3>Project Euro 2020 Analysis</h3>
+            <p>This project involved analyzing data from the Euro 2020 football championship to derive insightful analytics and visualizations.</p>
+            <div class="project-thumbnail-container">
+                <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
+                    <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
+                </a>
+                <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" class="project-button">View More</a>
+            </div>
+            <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
+            <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
+            <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
+        </div>
+        <div class="project-item">
+            <h3>Player Presentations</h3>
+            <p>Analysis of potential targets. Assessing their strengths, weaknesses, how well they fit to the profile, and comparison to other players.</p>
+            <div class="project-thumbnail-container">
+                <a href="images/CMDataTemplate/CMTemp1.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 1">
+                    <img src="images/CMDataTemplate/CMTemp1.png" alt="Central Midfielder Data Presentation" class="project-thumbnail">
+                </a>
+                <a href="images/CMDataTemplate/CMTemp22.png" data-lightbox="cm-data-presentation" class="project-button">View More</a>
+            </div>
+            <a href="images/CMDataTemplate/CMTemp3.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 3"></a>
+            <a href="images/CMDataTemplate/CMTemp4.png" data-lightbox="cm-data-presentation" data-title="Central Midfielder Data Presentation - Image 4"></a>
+        </div>
     </div>
 
     <!-- JavaScript for slideshow and lightbox -->
