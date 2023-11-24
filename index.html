@@ -88,10 +88,12 @@
       margin: 0 auto; /* Center the image horizontally */
     }
     .lb-image {
-      max-width: 100%; /* Limits the image width to 100% of the container width */
-      max-height: 80vh; /* Limits the image height to 80% of the viewport height */
+      max-width: 95%; /* Adjust the percentage to give some room on the sides */
+      max-height: 95vh; /* Adjust the height to be less than the viewport height to avoid scrolling */
+      width: auto; /* Maintain the original aspect ratio */
+      height: auto; /* Maintain the original aspect ratio */
       display: block; /* Ensures the image is a block-level element */
-      margin: auto; /* Centers the image horizontally in the container */
+      margin: auto; /* Centers the image horizontally and vertically in the container */
     }
   </style>
 </head>
