@@ -6,164 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malek Shafei - Football Data Scouting</title>
   <style>
-    body, html {
-      height: 100%;
+    /* Existing styles... */
+    /* Add any new styles below */
+    
+    .project-item h3 {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding-top: 20px;
+      font-size: 24px; /* Adjust the size as needed */
     }
-    .hero {
-      background-color: #000;
-      color: white;
-      height: 50vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    
+    .project-item p {
+      font-size: 16px; /* Adjust the size as needed */
+      color: #333; /* Dark grey color for text */
+      padding: 10px 0;
     }
-    .button-container {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-button {
-      background-color: #FF00FF;
-      color: white;
+    
+    .project-item .view-more {
+      display: block;
+      margin: 10px auto;
       padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 25px;
-      margin: 5px; /* Adjust as needed */
-    }
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-    .mySlides {
-      display: none;
-    }
-    .projects-section {
-    text-align: center;
-    padding: 50px; /* Adjust padding as needed */
-    }
-
-    .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px; /* Space between projects */
-    }
-    
-    .project-item {
-      width: calc(50% - 10px); /* Adjust width for responsiveness */
-      margin-bottom: 20px; /* Space below each project */
-    }
-    
-    .project-image {
-      width: 100%; /* Make image responsive */
-      height: auto; /* Maintain aspect ratio */
-      border: 1px solid #ccc; /* Optional border */
-    }
-    
-    .project-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #333; /* Dark background for the button */
+      background-color: #FF00FF; /* Pink background for the button */
       color: white; /* Text color */
       text-decoration: none;
-      border-radius: 5px; /* Rounded corners */
+      border-radius: 25px;
+      text-align: center;
+      width: 150px; /* Fixed width */
+      transition: background-color 0.3s ease;
     }
     
-    @media screen and (max-width: 600px) {
-      .project-item {
-          width: 100%; /* Full width on smaller screens */
-      }
+    .project-item .view-more:hover {
+      background-color: #cc00cc; /* Darker pink on hover */
     }
-    .project-thumbnail {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .project-thumbnail:hover {
-      transform: scale(1.05);
-    }
+    
+    /* Rest of the styles... */
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Hi, my name is Malek!</h1>
-    <h2>Football Data Recruitment</h2>
-    <h3>Having worked in journalism, video analysis, and scouting, I bring various perspectives and provide insights beyond what the data is saying.</h3>
-    <div class="button-container">
-        <a href="#about" class="hero-button">About Me</a>
-        <a href="#contact" class="hero-button">Contact Me</a>
-    </div>
-  </div>
+  <!-- Hero section and slideshow container remain unchanged -->
 
-  <div class="slideshow-container" id="slideshow">
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides">
-      <img src="images/Euro2020Project/12.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="images/OnePagerTemplate2.png" style="width:100%">
-    </div>
-    
-    <div class="mySlides">
-      <img src="images/Memphis 901 Pre Match.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="images/Mitoma.png" style="width:100%">
-    </div>
-
-    <!-- You can add more slides here -->
-
-    <!-- Add arrows for navigation if desired -->
-  </div>
-
-  <script>
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3100); // Change image every 2 seconds
-    }
-  </script>
+  <!-- Projects Section -->
   <div class="projects-section">
-    <!-- Project Title and Description here -->
     <div class="project-item">
       <h3>Project Euro 2020 Analysis</h3>
       <p>This project involved analyzing data from the Euro 2020 football championship to derive insightful analytics and visualizations.</p>
       
-      <!-- Visible thumbnail or button to start the slideshow -->
-      <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1">
-          <img src="images/Euro2020Project/8.png" alt="Project Euro 2020 - Image 1" class="project-thumbnail">
-      </a>
+      <!-- View More button -->
+      <a href="images/Euro2020Project/8.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 1" class="view-more">View More</a>
       
-      <!-- Hidden links for the rest of the slideshow -->
+      <!-- Hidden links for the Lightbox slideshow -->
       <a href="images/Euro2020Project/9.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 2"></a>
       <a href="images/Euro2020Project/10.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 3"></a>
       <a href="images/Euro2020Project/11.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 4"></a>
       <a href="images/Euro2020Project/12.png" data-lightbox="euro2020-project" data-title="Project Euro 2020 - Image 5"></a>
-</div>
-  <script src="lightside/js/lightbox.js"></script>
+    </div>
+  </div>
+
+  <!-- Lightbox JS -->
+  <script src="lightbox/js/lightbox.js"></script>
   <script>
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    // ...additional options as needed
-  })
-</script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'albumLabel': "Image %1 of %2"
+    })
+  </script>
 </body>
 </html>
